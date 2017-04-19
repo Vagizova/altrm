@@ -1,14 +1,39 @@
 {% extends layout %}
 {% block content %}
-	<section class="l-section">
-		<div class="l-container">
-		<h1>Переменные</h1>
-		<ul>
-			<li>-- Инлайн ( на текущей странице ) => {{ locals.title }}</li>
-			<li>-- Локальная ( для текущей странице ) => {{ locals.description }}</li>
-			<li>-- Глобальная ( для всех страниц ) => {{ common.data.title }}</li>
-			<img src="{{ storage ~ 'images/1.png' }}" alt="">
-		</ul>
+	<div class="c-panel">
+		
+		<div class="c-logo">
+				<a href="#main" id="logo" class="c-logo__img js-scrollTo">
+					<img src="{{ 'logo.png'|img_asset }}">
+				</a>
+			</div>
 	</div>
-	</section>
+
+	<div class="c-menu">
+	<div class="c-person">
+		<div class="c-person__block">
+			<div class="c-person__avatar" style="background-image: url(../images/avatar.png);"></div>
+			<div>
+				<span class="c-person__name">Иван иванов</span><br>
+				<span class="c-person__status">Online</span>
+			</div>
+		</div>
+		<div class="c-holder">
+			<span>10.000 руб.</span><br>
+			<a href="">оплатить</a>
+		</div>
+	</div>
+		<ul class="c-menu__list">
+		{% for item in menu %}
+			<li class="c-menu__item">
+				
+				<a href="{{ item.link }}" class="c-menu__link"><img src="{{ item.img }}" class="c-menu__icon"></img>{{ item.text }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+		<div class="c-enter">
+			<a href="" class="c-enter__button">FAQ</a>
+			<a href="" class="c-enter__button">LOGOUT</a>
+		</div>
+	</div>
 {% endblock %}

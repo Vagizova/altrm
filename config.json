@@ -14,7 +14,7 @@
 		{
 			"name": "index",
 			"route": "/",
-			"pageData": ["index"],
+			"pageData": ["index", "menu"],
 			"pageVars": {
 				"title": "Заголовок страницы",
 				"description": "Описание страницы",
